@@ -1019,6 +1019,8 @@ progress::-webkit-progress-value {
 	overflow: hidden;
 	margin-bottom: 10px;
 	padding: 20px;
+	display: flex;
+	color: white;
 	/* position: relative; */
 }
 @media (min-width: 1400px){
@@ -1026,8 +1028,8 @@ progress::-webkit-progress-value {
 		content: '';
 		position: absolute;
 		bottom: -25px;
-		left: 30vw;
-		width: 40vw;
+		left: calc(50vw - 400px);
+		width: 800px;
 		height: 25px;
 		background: #fff;
 		border-top: 5px solid #ccc;
@@ -1078,9 +1080,88 @@ progress::-webkit-progress-value {
 		top: 41%;
 	}
 }
+@media (max-width: 800px){
+	.laptop{
+		flex-direction: column;
+	}
+	.laptop form{
+		width: 100%;
+	}
+	.laptop .social-media-form{
+		padding-top: 30px;
+		width: 100%;
+	}
+}
 /* input{
 	background: white;
 	margin: 10px;
 	outline: none;
 	border: none;
 } */
+form{
+	width: 70%;
+	background: yellow;
+}
+.social-media-form{
+	width: 30%;
+	/* background: red; */
+}
+.social-media-form h1{
+	font-size: 30px;
+}
+.social-media-form h1:after{
+	width: 70%;
+}
+.social-media-icons{
+	/* padding-left: 20%; */
+	display: flex;
+	flex-direction: column;
+	justify-content: left;
+	width: 100%;
+}
+.social-media-icons a.icon-init{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	position: relative;
+	width: 100%;
+	padding-top: 10px;
+	color: white;
+	text-decoration: none;
+}
+a.icon-init i{
+	width: 10%;
+	margin: 0px;
+	padding: 0px;
+}
+a.icon-init span{
+	width: 40%;
+	align-items: center;
+	margin-top: auto;
+	margin-bottom: auto;
+}
+.social-media-form i{
+	color: white;
+	font-size: 30px;
+}
+@media (max-width: 1000px){
+	a.icon-init span{
+		display: none;
+	}
+	.social-media-icons{
+		flex-direction: row;
+	}
+}
+@media (max-width: 800px){
+	.social-media-icons{
+		/* justify-content: center; */
+		align-items: center;
+	}
+	a.icon-init{
+		width: 20%;
+		padding-top: 0px;
+	}
+	a.icon-init i{
+		width: 100%;
+	}
+}
