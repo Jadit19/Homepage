@@ -550,6 +550,48 @@ p.x span:hover::after {
 	display: flex;
 	/* background: yellow; */
 }
+.content-text p{
+	width: 20%;
+	height: auto;
+	/* background-color: yellow; */
+	text-align: right;
+	font-size: 100px;
+	color: #5161ce;
+	display: flex;
+}
+.content-text p i{
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+}
+@media (max-width: 500px){
+	.content-text p{
+		font-size: 60px;
+	}
+}
+.content-text .inside{
+	width: 60%;
+	/* background-color: red; */
+	height: auto;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.inside h1{
+	width: 100%;
+	/* margin-top: 50px; */
+	text-align: center;
+	font-weight: bold;
+}
+@media (max-width: 800px){
+	.inside h1{
+		font-size: 30px;
+	}
+	.inside h4{
+		font-size: 15px;
+	}
+}
 .main-content .main-img{
 	width: 30%;
 	padding: 30px;
