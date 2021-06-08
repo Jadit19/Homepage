@@ -126,3 +126,16 @@ console.log(tlw);
 document.getElementById("top1").style.width = tlw + 'px';
 document.getElementById("top2").style.width = tlw + 'px';
 document.getElementById("top3").style.width = tlw + 'px';
+
+var bdr_lft = document.getElementById('abs').offsetWidth / 11;
+var bdr = document.getElementById('abs').offsetHeight / 7;
+if (w <= 500){
+    bdr = bdr * 7/11;
+}
+var sel = document.querySelectorAll("#mee");
+for (var i=0; i<sel.length; i++){
+    var currSel = sel[i];
+    currSel.style.borderLeft = bdr_lft + "px solid #5161ce";
+    currSel.style.borderTop = bdr + "px solid transparent";
+    currSel.style.borderBottom = bdr + "px solid transparent";
+}

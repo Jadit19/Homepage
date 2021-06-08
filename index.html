@@ -43,8 +43,8 @@
         </nav>
         
         <!-- <section class="backgr">
-            <div class="arrow-right"></div>
-            <div class="arrow-right" style="margin-left: 50px;"></div>
+            <div class="arrow-right" id="mee" style="animation-delay: 0s;"></div>
+            <div class="arrow-right" id="mee" style="animation-delay: 0s;" style="margin-left: 50px;"></div>
         </section> -->
 
         <section class="intro" id="img_cont">
@@ -79,9 +79,15 @@
             </div>
             <div class="main-content">
                 <div class="content-text">
+                    <div class="svg-img" id="abs">
+                        <div class="arrow-right" id="mee" style="animation-delay: 0s;"></div>
+                        <div class="arrow-right" id="mee" style="animation-delay: 100ms;"></div>
+                        <div class="arrow-right" id="mee" style="animation-delay: 200ms;"></div>
+                        <div class="arrow-right" id="mee" style="animation-delay: 300ms;"></div>
+                        <div class="arrow-right" id="mee" style="animation-delay: 400ms;"></div>
+                    </div>
                     <p>
                         <i class="fas fa-quote-left" onclick="select1()" id="icon-top"></i>
-                        <!-- <div class="svg-img">ggrfew</div> -->
                     </p>
                     <div class="inside">
                         <h1>""YOU MISS 100% OF THE SHOTS YOU DONT TAKE</h1>
@@ -259,19 +265,19 @@
                 Drop me a text or contact me on social media:
             </p>
             <div class="laptop">
-                <form>
+                <form method="POST" autocomplete="off" name="google-sheet">
                     <h1 style="font-size: 30px;">Contact ME:</h1>
                     <div class="form-name">
                         <div>
-                            <input type="text" placeholder="First Name *" required><br>
+                            <input type="text" name="First_Name" placeholder="First Name *" required><br>
                         </div>
                         <div>
-                            <input type="text" placeholder="Last Name"><br>
+                            <input type="text" name="Last_Name" placeholder="Last Name"><br>
                         </div>
                     </div>
-                    <input type="email" placeholder="Email ID *" required><br>
+                    <input type="email" name="Email_ID" placeholder="Email ID *" required><br>
                     <!-- <input type="text" placeholder="Well, what do you think?" style="min-height: 200px; word-wrap: break-word; word-break: break-all;"> -->
-                    <textarea placeholder="Well, what do you think?"></textarea>
+                    <textarea name="Message" placeholder="Well, what do you think?"></textarea>
                     <div class="form-btn">
                         <div>
                             <input type="submit" class="form-submit" value="Submit">
@@ -313,6 +319,17 @@
             &copy; 2021 | Adit Jain
         </section>
 
+        <script>
+            const scriptURL = 'https://script.google.com/macros/s/AKfycbyyqvH8o8wr5TEClzkldgayO9Tm8sh5kJklgKe_l-QOdATGWc8/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+                e.preventDefault()
+                fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                    .then(response => alert("Thanks for Contacting Me!! I'll get back to you ASAP as possible :)"))
+                    .catch(error => console.error('Error!', error.message))
+            })
+        </script>
         <script type="text/javascript" src="apps.js"></script>
     </body>
 </html>
